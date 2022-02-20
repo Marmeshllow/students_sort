@@ -7,7 +7,7 @@ con = [
 ]
 
 
-def top_20(con_lst):
+def find_top_20(con_lst):
     res = sorted(con_lst, key=lambda x: (x['scores']['math'] + x['scores']['res_lang'] + x['scores']['cs'] + x['extra'],
                  x['scores']['math'] + x['scores']['cs']),
                  reverse=True)
