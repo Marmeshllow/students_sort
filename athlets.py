@@ -8,6 +8,3 @@ def find_athlets():
     sport = set(sportsmen)
     good_age = set(more_than_20_years)
     return english & sport & good_age
-
-
-print(find_athlets())

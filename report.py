@@ -1,5 +1,7 @@
 import csv
 import pandas as pd
+import openpyxl
+
 students_avg_scores = {'Max': 4.964, 'Eric': 4.962, 'Peter': 4.923, 'Mark': 4.957, 'Julie': 4.95, 'Jimmy': 4.973,
                        'Felix': 4.937, 'Vasya': 4.911, 'Don': 4.936, 'Zoi': 4.937}
 
@@ -17,4 +19,12 @@ def make_report_about_top3_v2(avg):
         writer.writerows(res[:3])
 
 
-make_report_about_top3(students_avg_scores)
+def make_report_about_top3_v3(avg):
+    res = sorted(avg.items(), key=lambda x: x[1], reverse=True)
+    excel_file = openpyxl.Workbook()
+    excel_sheet = excel_file.create_sheet(title='Best students', index=0)
+    excel_sheet['A1'] = 'Name'
+    excel_sheet['B1'] = 'Score'
+    for row in res[:3]:
+        excel_sheet.append(row)
+    excel_file.save('result.xlsx')

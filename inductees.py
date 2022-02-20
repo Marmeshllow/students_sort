@@ -18,7 +18,3 @@ def get_inductees(name_list, b_years, gender_list):
         elif b_years[i] is None and gender_list[i] in ('Male', None):
             clarify.append(name_list[i])
     return to_army, clarify
-
-
-to_army, clarify = get_inductees(names, birthday_years, genders)
-print(to_army, clarify)
