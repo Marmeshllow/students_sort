@@ -1,4 +1,3 @@
-
 con = [
     {'name': 'vasya', 'scores': {'math': 58, 'res_lang': 62, 'cs': 48}, 'extra': 0},    # 168
     {'name': 'fedya', 'scores': {'math': 33, 'res_lang': 85, 'cs': 42}, 'extra': 2},    # 162
@@ -8,7 +7,8 @@ con = [
 
 
 def find_top_20(con_lst):
-    res = sorted(con_lst, key=lambda x: (x['scores']['math'] + x['scores']['res_lang'] + x['scores']['cs'] + x['extra'],
+    lst = sorted(con_lst, key=lambda x: (x['scores']['math'] + x['scores']['res_lang'] + x['scores']['cs'] + x['extra'],
                  x['scores']['math'] + x['scores']['cs']),
                  reverse=True)
-    return res[:20]
+    result = [student.get('name') for student in lst[:20]]
+    return result
