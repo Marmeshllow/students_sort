@@ -3,6 +3,6 @@ sportsmen = ["Don", "Peter", "Eric", "Jimmy", "Mark"]
 more_than_20_years = ["Peter", "Julie", "Jimmy", "Mark", "Max"]
 
 
-def find_athlets(lst1, lst2, lst3):
-    result = list(set(lst1) & set(lst2) & set(lst3))
+def find_athlets(know_english, sportsmen, more_than_20_years):
+    result = list(set(know_english) & set(sportsmen) & set(more_than_20_years))
     return result
